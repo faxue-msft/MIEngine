@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Globalization;
+using System.Collections.ObjectModel;
 
 namespace AndroidDebugLauncher
 {
@@ -56,6 +57,8 @@ namespace AndroidDebugLauncher
             this.DeviceId = LaunchOptions.RequireAttribute(xmlOptions.DeviceId, "DeviceId");
             this.LogcatServiceId = GetLogcatServiceIdAttribute(xmlOptions.LogcatServiceId);
             this.WaitDynamicLibLoad = xmlOptions.WaitDynamicLibLoad;
+
+            this.SetupCommands = LaunchCommand.CreateCollectionFromXml(xmlOptions.SetupCommands);
 
             CheckTargetArchitectureSupported();
         }
@@ -220,5 +223,22 @@ namespace AndroidDebugLauncher
         public int JVMPort { get; private set; }
 
         public SourceRoot[] SourceRoots { get; private set; }
+
+        private ReadOnlyCollection<LaunchCommand> _setupCommands;
+
+        /// <summary>
+        /// [Required] Additional commands used to setup debugging. May be an empty collection
+        /// </summary>
+        public ReadOnlyCollection<LaunchCommand> SetupCommands
+        {
+            get { return _setupCommands; }
+            set
+            {
+                if (value == null)
+                    throw new ArgumentNullException("SetupCommands");
+
+                _setupCommands = value;
+            }
+        }
     }
 }

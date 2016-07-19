@@ -439,10 +439,10 @@ namespace AndroidDebugLauncher
                 launchOptions.AbsolutePrefixSOLibSearchPath = _launchOptions.AbsolutePrefixSOLibSearchPath;
 
                 // The default ABI is 'Cygwin' in the Android NDK >= r11 for Windows.
-                launchOptions.SetupCommands = new ReadOnlyCollection<LaunchCommand>(new LaunchCommand[]
-                {
-                    new LaunchCommand("-gdb-set osabi GNU/Linux")
-                });
+                //launchOptions.SetupCommands = new ReadOnlyCollection<LaunchCommand>(new LaunchCommand[]
+                //{
+                //    new LaunchCommand("-gdb-set osabi GNU/Linux")
+                //});
 
                 launchOptions.TargetArchitecture = _launchOptions.TargetArchitecture;
                 launchOptions.WorkingDirectory = _launchOptions.IntermediateDirectory;
@@ -451,6 +451,7 @@ namespace AndroidDebugLauncher
 
                 launchOptions.VisualizerFile = "Microsoft.Android.natvis";
                 launchOptions.WaitDynamicLibLoad = _launchOptions.WaitDynamicLibLoad;
+                launchOptions.SetupCommands = _launchOptions.SetupCommands;
 
                 return launchOptions;
             }

@@ -23,6 +23,10 @@ namespace MICore.Xml.LaunchOptions {
     public partial class AndroidLaunchOptions {
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public Command[] SetupCommands;
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string Package;
         
@@ -110,88 +114,6 @@ namespace MICore.Xml.LaunchOptions {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014")]
-    public enum TargetArchitecture {
-        
-        /// <remarks/>
-        x86,
-        
-        /// <remarks/>
-        arm,
-        
-        /// <remarks/>
-        arm64,
-        
-        /// <remarks/>
-        mips,
-        
-        /// <remarks/>
-        x64,
-        
-        /// <remarks/>
-        amd64,
-        
-        /// <remarks/>
-        x86_64,
-        
-        /// <remarks/>
-        X86,
-        
-        /// <remarks/>
-        ARM,
-        
-        /// <remarks/>
-        ARM64,
-        
-        /// <remarks/>
-        MIPS,
-        
-        /// <remarks/>
-        X64,
-        
-        /// <remarks/>
-        AMD64,
-        
-        /// <remarks/>
-        X86_64,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014")]
-    public enum MIMode {
-        
-        /// <remarks/>
-        gdb,
-        
-        /// <remarks/>
-        lldb,
-        
-        /// <remarks/>
-        clrdbg,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014")]
-    public partial class EnvironmentEntry {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Name;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Value;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string Value1;
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014")]
     public partial class Command {
@@ -211,6 +133,25 @@ namespace MICore.Xml.LaunchOptions {
         /// <remarks/>
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value;
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014")]
+    public partial class EnvironmentEntry {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Name;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Value;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value1;
     }
     
     /// <remarks/>
@@ -327,6 +268,69 @@ namespace MICore.Xml.LaunchOptions {
         
         /// <remarks/>
         None,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014")]
+    public enum TargetArchitecture {
+        
+        /// <remarks/>
+        x86,
+        
+        /// <remarks/>
+        arm,
+        
+        /// <remarks/>
+        arm64,
+        
+        /// <remarks/>
+        mips,
+        
+        /// <remarks/>
+        x64,
+        
+        /// <remarks/>
+        amd64,
+        
+        /// <remarks/>
+        x86_64,
+        
+        /// <remarks/>
+        X86,
+        
+        /// <remarks/>
+        ARM,
+        
+        /// <remarks/>
+        ARM64,
+        
+        /// <remarks/>
+        MIPS,
+        
+        /// <remarks/>
+        X64,
+        
+        /// <remarks/>
+        AMD64,
+        
+        /// <remarks/>
+        X86_64,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.81.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.microsoft.com/vstudio/MDDDebuggerOptions/2014")]
+    public enum MIMode {
+        
+        /// <remarks/>
+        gdb,
+        
+        /// <remarks/>
+        lldb,
+        
+        /// <remarks/>
+        clrdbg,
     }
     
     /// <remarks/>
